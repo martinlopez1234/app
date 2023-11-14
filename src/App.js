@@ -6,43 +6,26 @@ function App() {
 
 
 
-    <div class="container">
-      <h1 class="mt-5">Bienvenido a nuestro portafolio de arquitectura</h1>
-
-      <p>Mostramos nuestra pasión por la arquitectura a través de proyectos inspiradores.</p>
-
-
-      <div id="carouselExampleRide" class="carousel slide " data-bs-ride="true">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-              class="d-block w-75 mx-auto" alt="..." />
+    <div className="">
+      <div className="card bg-dark text-white" style={{ position: "relative" }}>
+        <img
+          src="https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          className="card-img"
+          alt="..."
+          style={{ objectFit: "cover", height: "915px", width: "100%" }}
+        />
+        <div className="card-img-overlay d-flex align-items-center">
+          <div>
+            <h1 className="card-title">CREAMOS LUGARES FELICES</h1>
+            <p className="card-text">
+              This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            </p>
           </div>
-          <div class="carousel-item ">
-            <img
-              src="https://images.unsplash.com/photo-1496564203457-11bb12075d90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-              class="d-block w-75 mx-auto" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://images.unsplash.com/photo-1451976426598-a7593bd6d0b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-              class="d-block w-75 mx-auto" alt="..." />
-          </div>
-
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+
       </div>
-
-
     </div>
+
   );
 }
 

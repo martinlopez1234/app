@@ -1,0 +1,30 @@
+
+/* codigo css (proyectos) para transformar a color blanco la imagen y que mueste el texto correpondiente */
+.card-proyecto {
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  opacity: 0; /* Inicialmente invisible */
+  transition: opacity 0.3s ease; /* Agregar transición para suavizar cambios */
+}
+
+.card-proyecto:hover img {
+  filter: brightness(0) saturate(100%) invert(100%) grayscale(100%);
+}
+
+.card-proyecto:hover .image-text {
+  opacity: 1; /* Hacer visible al pasar el ratón */
+}

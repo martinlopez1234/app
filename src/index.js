@@ -27,7 +27,7 @@ root.render(
         <Route path='/Proyectos' element={<Proyectos />} />
         <Route path='/Contacto' element={<Contacto />} />
       </Routes>
-      <Footer />
+
     </Router>
   </React.StrictMode>,
 );
