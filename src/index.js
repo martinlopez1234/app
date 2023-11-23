@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import Nosotros from './Nosotros';
 import Nabvar from './Nabvar';
-import Footer from './Footer';
+
 import Proyectos from './Proyectos';
 import Contacto from './Contacto';
 

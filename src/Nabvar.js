@@ -1,31 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Nosotros from './Nosotros';
+
+
 
 function Nabvar() {
   return (
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
         <Link className="nav-link" to="/App">LOGO EMPRESA</Link>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
 
               <Link className="nav-link" to="/Nosotros">Nosotros</Link>
 
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
 
 
               <Link className="nav-link" to="/Proyectos">Proyectos</Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link className="nav-link" to="/Contacto">Contacto</Link>
             </li>
           </ul>

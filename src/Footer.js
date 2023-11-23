@@ -1,14 +1,14 @@
 function Footer() {
   return (
 
-    <footer class="bg-dark text-light py-4 mt-5 fixed-bottom"  >
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
+    <footer className="bg-dark text-light py-4 mt-5 fixed-bottom"  >
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12 text-center">
             <h5>Síguenos en Redes Sociales</h5>
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
-            <a href="#"><i class="fab fa-twitter-square"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i className="fab fa-facebook-square"></i></a>
+            <a href="#"><i className="fab fa-twitter-square"></i></a>
+            <a href="#"><i className="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
