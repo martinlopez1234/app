@@ -26,6 +26,7 @@ function App() {
           </Carousel.Item>
         ))}
       </Carousel>
+
       <div className="card-img-overlay d-flex align-items-center ms-3 mt-5">
         <div>
           <h1 className="card-title text-white">CREAMOS LUGARES FELICES</h1>
