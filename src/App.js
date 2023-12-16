@@ -39,11 +39,11 @@ function App() {
           <Link
             className="btn card-img-overlay text-white"
             to="/Proyectos"
-            style={{ marginTop: "650px", color: "white", transition: "color 0.3s" }}
+            style={{ marginTop: "750px", color: "white", transition: "color 0.3s" }}
             onMouseOver={(e) => e.target.style.color = "gray"}
             onMouseOut={(e) => e.target.style.color = "white"}
           >
-            <h4>Ver Más</h4>
+            <h4>Nuestros Proyectos</h4>
           </Link>
         </div>
       </div>
