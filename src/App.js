@@ -20,7 +20,7 @@ function App() {
           <Carousel.Item key={index}>
             <img style={{
 
-
+              objectFit: 'cover', // Ajusta la propiedad objectFit
               height: '917px',
               width: '100%',
             }}

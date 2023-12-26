@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Nabvar() {
   return (
 
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light ">
       <div className="container-fluid">
         <Link className="nav-link" to="/App">LOGO EMPRESA</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
