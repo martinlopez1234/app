@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import Nosotros from './Nosotros';
 import Nabvar from './Nabvar';
-
+import ProyectoDetalle from './ProyectoDetalle'; // Importa tu componente de detalle de proyecto
 import Proyectos from './Proyectos';
 import Contacto from './Contacto';
 
@@ -21,12 +21,14 @@ root.render(
     <Router>
       <Nabvar />
       <Routes>
-        <Route path="/" element={<Navigate to="/App" />} />
+        <Route path="/" element={<Proyectos />} />
         <Route path="/App" element={<App />} />
         <Route path="/Nosotros" element={<Nosotros />} />
-        <Route path='/Proyectos' element={<Proyectos />} />
-        <Route path='/Contacto' element={<Contacto />} />
+        <Route path="/proyecto/:id" element={<ProyectoDetalle />} />
+        <Route path="/Proyectos" element={<Proyectos />} />
+        <Route path="/Contacto" element={<Contacto />} />
       </Routes>
+
 
     </Router>
   </React.StrictMode>,

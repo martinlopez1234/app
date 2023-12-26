@@ -18,16 +18,25 @@ function App() {
       <Carousel controls={false} indicators={false}  >
         {images.map((image, index) => (
           <Carousel.Item key={index}>
-            <img
+            <img style={{
+
+
+              height: '917px',
+              width: '100%',
+            }}
               className="d-block "
               src={image}
-              alt={`Slide ${index + 1}`}
+
+              alt={`Slide ${index + 1}
+              
+              `
+              }
             />
           </Carousel.Item>
         ))}
       </Carousel>
 
-      <div className="card-img-overlay d-flex align-items-center ms-3 mt-5">
+      <div className="card-img-overlay d-flex align-items-center ms-3 mt-5" >
         <div>
           <h1 className="card-title text-white">CREAMOS LUGARES FELICES</h1>
           <p className="card-text text-white">
@@ -39,7 +48,7 @@ function App() {
           <Link
             className="btn card-img-overlay text-white"
             to="/Proyectos"
-            style={{ marginTop: "750px", color: "white", transition: "color 0.3s" }}
+            style={{ marginTop: "820px", color: "white", transition: "color 0.3s", border: "none" }}
             onMouseOver={(e) => e.target.style.color = "gray"}
             onMouseOut={(e) => e.target.style.color = "white"}
           >
