@@ -86,13 +86,84 @@ const ProyectoDetalle = () => {
 
       </div>
       <div className='container mt-5'>
-        <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
+        <h5>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
 
-        </h3>
-        <h3>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.</h3>
+        </h5>
+        <h5>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.</h5>
       </div>
-    </div>
+
+      <div class="container-fluid mt-5 ">
+        <div class="row">
+          <div class="col-md-4 order-md-1 order-2">
+            <h5>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
+            </h5>
+            <h5>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
+            </h5>
+            <h5>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
+            </h5>
+          </div>
+          <div class="col-md-8 order-md-2 order-1">
+            <img src="https://images.unsplash.com/photo-1618385418700-35dc948cdeec?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="Imagen" />
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="container-fluid mt-5">
+        <div class="row">
+          <div class="col-md-8 order-md-1 order-2">
+            <img src="https://images.unsplash.com/photo-1556156657-b2925b706f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="Imagen" />
+          </div>
+          <div class="col-md-4 order-md-2 order-1">
+            <h5>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
+            </h5>
+            <h5>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
+            </h5>
+            <h5>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5 container-fluid">
+        <div class="col-12 text-center">
+          <h2>Galería</h2>
+        </div>
+      </div>
+      <center>
+        <div class="row container">
+          <div class="col-md-4 mb-4">
+            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Imagen de ejemplo 1" />
+          </div>
+          <div class="col-md-4 mb-4">
+            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Imagen de ejemplo 2" />
+          </div>
+          <div class="col-md-4 mb-4">
+            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Imagen de ejemplo 3" />
+          </div>
+          <div class="col-md-4 mb-4">
+            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Imagen de ejemplo 1" />
+          </div>
+          <div class="col-md-4 mb-4">
+            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Imagen de ejemplo 2" />
+          </div>
+          <div class="col-md-4 mb-4">
+            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Imagen de ejemplo 3" />
+          </div>
+        </div>
+      </center>
+
+    </div >
+
+
+
   );
 };
 
