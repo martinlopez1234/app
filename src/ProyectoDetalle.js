@@ -114,7 +114,7 @@ const ProyectoDetalle = () => {
 
 
       </div>
-      {"comentando"}
+
       <div class="container-fluid mt-5">
         <div class="row">
           <div class="col-md-8 order-md-1 order-1">
