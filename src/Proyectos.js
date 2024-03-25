@@ -33,7 +33,7 @@ function Proyectos() {
           <Link to="/proyecto/2">
             <div className="card card-proyecto">
               <img
-                src="/app/Buzeta_Fachada_002_ALTA.JPG"
+                src="/app/Buzeta_Fachada_002_ALTA.jpg"
                 className="card-img-top project-image" alt="Proyecto 2" />
               <div className="image-text " id="text-proyecto1">Proyecto 2</div>
             </div>

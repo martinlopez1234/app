@@ -28,7 +28,7 @@ const ProyectoDetalle = () => {
       id: 2,
       nombre: 'Proyecto 2',
       descripcion: 'Descripción del Proyecto 2...',
-      imagen: process.env.PUBLIC_URL + '/Buzeta_Fachada_002_ALTA.JPG'
+      imagen: '/app/Buzeta_Fachada_002_ALTA.jpg'
     },
 
     {
@@ -118,7 +118,7 @@ const ProyectoDetalle = () => {
           </div>
           <div className="col-md-8 order-md-3 order-1">
             <img
-              src={process.env.PUBLIC_URL + '/BICICLETAS_ALTA.JPG'}
+              src='/app/BICICLETAS_ALTA.jpg'
               className="img-fluid"
 
               alt="Imagen"
@@ -158,27 +158,27 @@ const ProyectoDetalle = () => {
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row">
-              <div class="col-md-4" onClick={() => handleImageClick("/app/BICICLETAS_ALTA.JPG")}>
+              <div class="col-md-4" onClick={() => handleImageClick("/app/BICICLETAS_ALTA.jpg")}>
                 <img src="/app/BICICLETAS_ALTA.JPG" class="d-block w-100 h-100" alt="Imagen de ejemplo 1" />
 
               </div>
-              <div class="col-md-4" onClick={() => handleImageClick("/app/PATIOALTA.JPG")}>
+              <div class="col-md-4" onClick={() => handleImageClick("/app/PATIOALTA.jpg")}>
                 <img src="/app/PATIOALTA.JPG" class="d-block w-100 h-100" alt="Imagen de ejemplo 2" />
               </div>
-              <div class="col-md-4" onClick={() => handleImageClick("/app/QUINCHO_ALTA.JPG")}>
+              <div class="col-md-4" onClick={() => handleImageClick("/app/QUINCHO_ALTA.jpg")}>
                 <img src="/app/QUINCHO_ALTA.JPG" class="d-block w-100 h-100" alt="Imagen de ejemplo 3" />
               </div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="row">
-              <div class="col-md-4" onClick={() => handleImageClick("/app/BICICLETAS_ALTA.JPG")}>
+              <div class="col-md-4" onClick={() => handleImageClick("/app/BICICLETAS_ALTA.jpg")}>
                 <img src="/app/BICICLETAS_ALTA.JPG" class="d-block w-100 h-100" alt="Imagen de ejemplo 4" />
               </div>
-              <div class="col-md-4" onClick={() => handleImageClick("/app/PETSPA_ALTA.JPG")}>
+              <div class="col-md-4" onClick={() => handleImageClick("/app/PETSPA_ALTA.jpg")}>
                 <img src="/app/PETSPA_ALTA.JPG" class="d-block w-100 h-100" alt="Imagen de ejemplo 5" />
               </div>
-              <div class="col-md-4" onClick={() => handleImageClick("/app/HALL_ALTA.JPG")}>
+              <div class="col-md-4" onClick={() => handleImageClick("/app/HALL_ALTA.jpg")}>
                 <img src="/app/HALL_ALTA.JPG" class="d-block w-100 h-100" alt="Imagen de ejemplo 6" />
               </div>
             </div>
