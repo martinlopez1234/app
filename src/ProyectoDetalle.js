@@ -1,8 +1,18 @@
-import React from 'react';
+
 import { useParams } from 'react-router-dom';
 
+import React, { useState } from 'react';
+import { Modal, Button } from 'react-bootstrap';
 const ProyectoDetalle = () => {
   const { id } = useParams();
+
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState('');
+
+  const handleImageClick = (imageUrl) => {
+    setSelectedImage(imageUrl);
+    setShowModal(true);
+  };
 
   // Aquí podrías cargar la información del proyecto desde tu fuente de datos (API, estado local, etc.)
   // En este ejemplo, estoy utilizando un array de proyectos simulado
@@ -18,7 +28,7 @@ const ProyectoDetalle = () => {
       id: 2,
       nombre: 'Proyecto 2',
       descripcion: 'Descripción del Proyecto 2...',
-      imagen: 'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80',
+      imagen: process.env.PUBLIC_URL + '/Buzeta_Fachada_002_ALTA.JPG'
     },
 
     {
@@ -93,7 +103,7 @@ const ProyectoDetalle = () => {
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.</h5>
       </div>
 
-      <div class="container-fluid mt-5 ">
+      <div class=" mt-5 ">
         <div class="row">
           <div class="col-md-4 order-md-1 order-2">
             <h5>
@@ -106,19 +116,25 @@ const ProyectoDetalle = () => {
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
             </h5>
           </div>
-          <div class="col-md-8 order-md-2 order-1">
-            <img src="https://images.unsplash.com/photo-1618385418700-35dc948cdeec?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="Imagen" />
+          <div className="col-md-8 order-md-3 order-1">
+            <img
+              src={process.env.PUBLIC_URL + '/BICICLETAS_ALTA.JPG'}
+              className="img-fluid"
+
+              alt="Imagen"
+            />
           </div>
+
         </div>
 
 
 
       </div>
 
-      <div class="container-fluid mt-5">
+      <div class=" mt-1">
         <div class="row">
           <div class="col-md-8 order-md-1 order-1">
-            <img src="https://images.unsplash.com/photo-1556156657-b2925b706f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="Imagen" />
+            <img src={process.env.PUBLIC_URL + '/QUINCHO_ALTA.JPG'} class="img-fluid" alt="Imagen" />
           </div>
           <div class="col-md-4 order-md-2 order-2">
             <h5>
@@ -138,28 +154,56 @@ const ProyectoDetalle = () => {
           <h2>Galería</h2>
         </div>
       </div>
-      <center>
-        <div class="row container">
-          <div class="col-md-4 mb-4">
-            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Imagen de ejemplo 1" />
+      <div id="carouselExampleControls" class="carousel slide container" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4" onClick={() => handleImageClick(process.env.PUBLIC_URL + '/BICICLETAS_ALTA.JPG')}>
+                <img src={process.env.PUBLIC_URL + '/BICICLETAS_ALTA.JPG'} class="d-block w-100 h-100" alt="Imagen de ejemplo 1" />
+
+              </div>
+              <div class="col-md-4" onClick={() => handleImageClick(process.env.PUBLIC_URL + '/PATIOALTA.JPG')}>
+                <img src={process.env.PUBLIC_URL + '/PATIOALTA.JPG'} class="d-block w-100 h-100" alt="Imagen de ejemplo 2" />
+              </div>
+              <div class="col-md-4" onClick={() => handleImageClick(process.env.PUBLIC_URL + '/QUINCHO_ALTA.JPG')}>
+                <img src={process.env.PUBLIC_URL + '/QUINCHO_ALTA.JPG'} class="d-block w-100 h-100" alt="Imagen de ejemplo 3" />
+              </div>
+            </div>
           </div>
-          <div class="col-md-4 mb-4">
-            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Imagen de ejemplo 2" />
-          </div>
-          <div class="col-md-4 mb-4">
-            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Imagen de ejemplo 3" />
-          </div>
-          <div class="col-md-4 mb-4">
-            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Imagen de ejemplo 1" />
-          </div>
-          <div class="col-md-4 mb-4">
-            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Imagen de ejemplo 2" />
-          </div>
-          <div class="col-md-4 mb-4">
-            <img src="https://via.placeholder.com/300" class="img-fluid" alt="Imagen de ejemplo 3" />
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4" onClick={() => handleImageClick(process.env.PUBLIC_URL + '/BICICLETAS_ALTA.JPG')}>
+                <img src={process.env.PUBLIC_URL + '/BICICLETAS_ALTA.JPG'} class="d-block w-100 h-100" alt="Imagen de ejemplo 4" />
+              </div>
+              <div class="col-md-4" onClick={() => handleImageClick(process.env.PUBLIC_URL + '/PETSPA_ALTA.JPG')}>
+                <img src={process.env.PUBLIC_URL + '/PETSPA_ALTA.JPG'} class="d-block w-100 h-100" alt="Imagen de ejemplo 5" />
+              </div>
+              <div class="col-md-4" onClick={() => handleImageClick(process.env.PUBLIC_URL + '/HALL_ALTA.JPG')}>
+                <img src={process.env.PUBLIC_URL + '/HALL_ALTA.JPG'} class="d-block w-100 h-100" alt="Imagen de ejemplo 6" />
+              </div>
+            </div>
           </div>
         </div>
-      </center>
+        <a class="carousel-control-prev bg-dark" href="#carouselExampleControls" role="button" data-slide="prev" style={{ left: -190 }}>
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next  bg-dark" href="#carouselExampleControls" role="button" data-slide="next" style={{ right: -190 }}>
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+        </a>
+      </div>
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Body>
+          <img src={selectedImage} className="img-fluid" alt="Imagen ampliada" />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>Cerrar</Button>
+        </Modal.Footer>
+      </Modal>
+
+
+
 
     </div >
 

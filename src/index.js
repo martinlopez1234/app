@@ -23,6 +23,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Proyectos />} />
         <Route path="/App" element={<App />} />
+
         <Route path="/Nosotros" element={<Nosotros />} />
         <Route path="/proyecto/:id" element={<ProyectoDetalle />} />
         <Route path="/Proyectos" element={<Proyectos />} />

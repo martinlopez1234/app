@@ -1,0 +1,8 @@
+.navbar {
+  position: fixed; /* Cambia de 'absolute' a 'fixed' para conservar el efecto sticky */
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: none; /* Ajusta la opacidad y el color de fondo según tus necesidades */
+  z-index: 1000; /* Asegura que la barra de navegación esté por encima de otros elementos */
+}
