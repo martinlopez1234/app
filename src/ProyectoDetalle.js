@@ -134,7 +134,7 @@ const ProyectoDetalle = () => {
       <div class=" mt-1">
         <div class="row">
           <div class="col-md-8 order-md-1 order-1">
-            <img src="/app/QUINCHO_ALTA.JPG" class="img-fluid" alt="Imagen" />
+            <img src="/app/QUINCHO_ALTA.jpg" class="img-fluid" alt="Imagen" />
           </div>
           <div class="col-md-4 order-md-2 order-2">
             <h5>
@@ -159,27 +159,27 @@ const ProyectoDetalle = () => {
           <div class="carousel-item active">
             <div class="row">
               <div class="col-md-4" onClick={() => handleImageClick("/app/BICICLETAS_ALTA.jpg")}>
-                <img src="/app/BICICLETAS_ALTA.JPG" class="d-block w-100 h-100" alt="Imagen de ejemplo 1" />
+                <img src="/app/BICICLETAS_ALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 1" />
 
               </div>
               <div class="col-md-4" onClick={() => handleImageClick("/app/PATIOALTA.jpg")}>
-                <img src="/app/PATIOALTA.JPG" class="d-block w-100 h-100" alt="Imagen de ejemplo 2" />
+                <img src="/app/PATIOALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 2" />
               </div>
               <div class="col-md-4" onClick={() => handleImageClick("/app/QUINCHO_ALTA.jpg")}>
-                <img src="/app/QUINCHO_ALTA.JPG" class="d-block w-100 h-100" alt="Imagen de ejemplo 3" />
+                <img src="/app/QUINCHO_ALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 3" />
               </div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="row">
               <div class="col-md-4" onClick={() => handleImageClick("/app/BICICLETAS_ALTA.jpg")}>
-                <img src="/app/BICICLETAS_ALTA.JPG" class="d-block w-100 h-100" alt="Imagen de ejemplo 4" />
+                <img src="/app/BICICLETAS_ALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 4" />
               </div>
               <div class="col-md-4" onClick={() => handleImageClick("/app/PETSPA_ALTA.jpg")}>
-                <img src="/app/PETSPA_ALTA.JPG" class="d-block w-100 h-100" alt="Imagen de ejemplo 5" />
+                <img src="/app/PETSPA_ALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 5" />
               </div>
               <div class="col-md-4" onClick={() => handleImageClick("/app/HALL_ALTA.jpg")}>
-                <img src="/app/HALL_ALTA.JPG" class="d-block w-100 h-100" alt="Imagen de ejemplo 6" />
+                <img src="/app/HALL_ALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 6" />
               </div>
             </div>
           </div>
