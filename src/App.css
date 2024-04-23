@@ -41,3 +41,14 @@
   }
 }
 
+ .carousel-control-prev-icon {
+  filter: invert(1); /* Invierte los colores del SVG (blanco a negro) */
+   transform: scale(2); /* Ajusta el valor según tus necesidades */
+  
+    }
+
+     .carousel-control-next-icon {
+  filter: invert(1); /* Invierte los colores del SVG (blanco a negro) */
+   transform: scale(2); /* Ajusta el valor según tus necesidades */
+  
+    }

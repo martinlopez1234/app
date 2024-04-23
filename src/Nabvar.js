@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import './Nabvar.css'; // Importa tu archivo de estilos CSS
 
+import { Button } from 'react-bootstrap';
+
+
+
 function Navbar() {
+
+
+
   return (
     <div className="nav-wrapper">
       <nav className="navbar  ">
@@ -14,16 +21,21 @@ function Navbar() {
               style={{ width: '60px', height: '60px' }}
             />
           </Link>
-          <button
+
+
+
+
+          <Button
             className="navbar-toggler bg-light"
+            variant="light"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar"
           >
             <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          </Button>
+          <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
               <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>

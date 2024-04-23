@@ -1,6 +1,6 @@
 
 import { useParams } from 'react-router-dom';
-
+import './App.css';
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 const ProyectoDetalle = () => {
@@ -104,17 +104,19 @@ const ProyectoDetalle = () => {
       </div>
 
       <div class=" mt-5 ">
-        <div class="row">
-          <div class="col-md-4 order-md-1 order-2">
-            <h5>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
-            </h5>
-            <h5>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
-            </h5>
-            <h5>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
-            </h5>
+        <div class="row ">
+          <div class="col-md-4 order-md-1 order-2 ">
+            <div className='text-justify container'>
+              <h5>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
+              </h5>
+              <h5>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
+              </h5>
+              <h5>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
+              </h5>
+            </div>
           </div>
           <div className="col-md-8 order-md-3 order-1">
             <img
@@ -137,15 +139,17 @@ const ProyectoDetalle = () => {
             <img src="/app/QUINCHO_ALTA.jpg" class="img-fluid" alt="Imagen" />
           </div>
           <div class="col-md-4 order-md-2 order-2">
-            <h5>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
-            </h5>
-            <h5>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
-            </h5>
-            <h5>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
-            </h5>
+            <div className='text-justify container'>
+              <h5>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
+              </h5>
+              <h5>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
+              </h5>
+              <h5>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
+              </h5>
+            </div>
           </div>
         </div>
       </div>
@@ -158,49 +162,61 @@ const ProyectoDetalle = () => {
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row">
-              <div class="col-md-4" onClick={() => handleImageClick("/app/BICICLETAS_ALTA.jpg")}>
+              <div class="col-md-3" onClick={() => handleImageClick("/app/BICICLETAS_ALTA.jpg")}>
                 <img src="/app/BICICLETAS_ALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 1" />
 
               </div>
-              <div class="col-md-4" onClick={() => handleImageClick("/app/PATIOALTA.jpg")}>
+              <div class="col-md-3" onClick={() => handleImageClick("/app/PATIOALTA.jpg")}>
                 <img src="/app/PATIOALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 2" />
               </div>
-              <div class="col-md-4" onClick={() => handleImageClick("/app/QUINCHO_ALTA.jpg")}>
+              <div class="col-md-3" onClick={() => handleImageClick("/app/QUINCHO_ALTA.jpg")}>
+                <img src="/app/QUINCHO_ALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 3" />
+              </div>
+
+              <div class="col-md-3" onClick={() => handleImageClick("/app/QUINCHO_ALTA.jpg")}>
                 <img src="/app/QUINCHO_ALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 3" />
               </div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="row">
-              <div class="col-md-4" onClick={() => handleImageClick("/app/BICICLETAS_ALTA.jpg")}>
+              <div class="col-md-3" onClick={() => handleImageClick("/app/BICICLETAS_ALTA.jpg")}>
                 <img src="/app/BICICLETAS_ALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 4" />
               </div>
-              <div class="col-md-4" onClick={() => handleImageClick("/app/PETSPA_ALTA.jpg")}>
+              <div class="col-md-3" onClick={() => handleImageClick("/app/PETSPA_ALTA.jpg")}>
                 <img src="/app/PETSPA_ALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 5" />
               </div>
-              <div class="col-md-4" onClick={() => handleImageClick("/app/HALL_ALTA.jpg")}>
+              <div class="col-md-3" onClick={() => handleImageClick("/app/HALL_ALTA.jpg")}>
                 <img src="/app/HALL_ALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 6" />
+              </div>
+              <div class="col-md-3" onClick={() => handleImageClick("/app/BICICLETAS_ALTA.jpg")}>
+                <img src="/app/BICICLETAS_ALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 4" />
               </div>
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev bg-dark" href="#carouselExampleControls" role="button" data-slide="prev" style={{ left: -190 }}>
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Anterior</span>
+        <a class="carousel-control-prev   " href="#carouselExampleControls" role="button" data-slide="prev" style={{ left: -150 }}>
+          <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+
         </a>
-        <a class="carousel-control-next  bg-dark" href="#carouselExampleControls" role="button" data-slide="next" style={{ right: -190 }}>
+
+
+        <a class="carousel-control-next  " href="#carouselExampleControls" role="button" data-slide="next" style={{ right: -150 }}>
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Siguiente</span>
+
+
         </a>
       </div>
-      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
-        <Modal.Body>
-          <img src={selectedImage} className="img-fluid" alt="Imagen ampliada" />
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered size="xl">
+        <Modal.Body style={{ position: 'relative', textAlign: 'center' }}>
+          <img src={selectedImage} className="img-fluid" alt="Imagen ampliada" style={{ maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto' }} />
+
+          <button style={{ position: 'absolute', top: 10, right: 10, background: 'none', border: 'none', cursor: 'pointer', fontSize: 30, color: 'white' }} onClick={() => setShowModal(false)}>X</button>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal(false)}>Cerrar</Button>
-        </Modal.Footer>
       </Modal>
+
+
+
 
 
 
