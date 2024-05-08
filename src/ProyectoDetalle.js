@@ -106,7 +106,7 @@ const ProyectoDetalle = () => {
       <div class=" mt-5 ">
         <div class="row ">
           <div class="col-md-4 order-md-1 order-2 ">
-            <div className='text-justify container'>
+            <div className='ms-3 text-justify container'>
               <h5>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat rem ea minus consectetur. Necessitatibus deserunt amet eius quis vel, cumque aspernatur praesentium, officiis molestiae esse repellendus pariatur qui expedita! Voluptate.
               </h5>
@@ -166,6 +166,8 @@ const ProyectoDetalle = () => {
                 <img src="/app/BICICLETAS_ALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 1" />
 
               </div>
+
+
               <div class="col-md-3" onClick={() => handleImageClick("/app/PATIOALTA.jpg")}>
                 <img src="/app/PATIOALTA.jpg" class="d-block w-100 h-100" alt="Imagen de ejemplo 2" />
               </div>
@@ -211,7 +213,7 @@ const ProyectoDetalle = () => {
         <Modal.Body style={{ position: 'relative', textAlign: 'center' }}>
           <img src={selectedImage} className="img-fluid" alt="Imagen ampliada" style={{ maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto' }} />
 
-          <button style={{ position: 'absolute', top: 10, right: 10, background: 'none', border: 'none', cursor: 'pointer', fontSize: 30, color: 'white' }} onClick={() => setShowModal(false)}>X</button>
+          <button style={{ position: 'absolute', top: -6.5, right: 15, background: 'none', border: 'none', cursor: 'pointer', fontSize: 50, color: 'white' }} onClick={() => setShowModal(false)}>×</button>
         </Modal.Body>
       </Modal>
 
