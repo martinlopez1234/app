@@ -21,10 +21,10 @@ function Proyectos() {
             <div className="card card-proyecto" onMouseOver={(e) => changeImage(e.target)} onMouseOut={(e) => restoreImage(e.target)}>
               <div className="image-container">
                 <img
-                  src="https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  src="/app/imgVictorManuel/Imagen 1.png"
                   className="card-img-top project-image" alt="Proyecto 1" id="proyecto1"
                 />
-                <div className="image-text" id="text-proyecto1">Proyecto 1</div>
+                <div className="image-text" id="text-proyecto1">Conjunto Víctor Manuel</div>
               </div>
             </div>
           </Link>
@@ -33,9 +33,9 @@ function Proyectos() {
           <Link to="/proyecto/2">
             <div className="card card-proyecto">
               <img
-                src="/app/Buzeta_Fachada_002_ALTA.jpg"
+                src="/app/imgNUA/imagen 1.png"
                 className="card-img-top project-image" alt="Proyecto 2" />
-              <div className="image-text " id="text-proyecto1">Proyecto 2</div>
+              <div className="image-text " id="text-proyecto1">NUA - Núcleo Urbano Algarrobo</div>
             </div>
           </Link>
         </div>
@@ -43,9 +43,9 @@ function Proyectos() {
           <Link to="/proyecto/3">
             <div className="card card-proyecto">
               <img
-                src="https://images.unsplash.com/photo-1451976426598-a7593bd6d0b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                src="/app/imgPMS/imagen 2.png"
                 className="card-img-top project-image" alt="Proyecto 3" />
-              <div className="image-text" id="text-proyecto1">Proyecto 3</div>
+              <div className="image-text" id="text-proyecto1">Paralelos Matta Sur</div>
             </div>
           </Link>
         </div>

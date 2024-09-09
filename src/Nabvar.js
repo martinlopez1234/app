@@ -18,7 +18,7 @@ function Navbar() {
             <img
               src={process.env.PUBLIC_URL + '/LogoNHM3.png'}
               alt="Mi Imagen"
-              style={{ width: '60px', height: '60px' }}
+              style={{ width: '94px', height: '72px' }}
             />
           </Link>
 
@@ -26,14 +26,15 @@ function Navbar() {
 
 
           <Button
-            className="navbar-toggler bg-light"
+            className="navbar-toggler "
+            style={{ marginRight: "25px", backgroundColor: 'rgb(25, 27, 65)' }}
             variant="light"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"  ></span>
           </Button>
           <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div className="offcanvas-header">
@@ -61,8 +62,8 @@ function Navbar() {
             </div>
           </div>
         </div>
-      </nav>
-    </div>
+      </nav >
+    </div >
   );
 }
 
