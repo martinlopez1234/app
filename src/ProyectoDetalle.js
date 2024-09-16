@@ -130,7 +130,7 @@ const ProyectoDetalle = () => {
       imagenCarrusel8: '/app/imgNUA/Imagen 31.png',
 
 
-      imagen: '/app/imgNUA/imagen 1.png'
+      imagen: '/app/imgNUA/Imagen 1.png'
     },
 
     {

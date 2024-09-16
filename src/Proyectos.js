@@ -33,7 +33,7 @@ function Proyectos() {
           <Link to="/proyecto/2">
             <div className="card card-proyecto">
               <img
-                src="/app/imgNUA/imagen 1.png"
+                src="/app/imgNUA/Imagen 1.png"
                 className="card-img-top project-image" alt="Proyecto 2" />
               <div className="image-text " id="text-proyecto1">NUA - Núcleo Urbano Algarrobo</div>
             </div>
