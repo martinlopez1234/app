@@ -191,7 +191,7 @@ const ProyectoDetalle = () => {
       imagenCarrusel7: '/app/imgPMS/Imagen 29.png',
       imagenCarrusel8: '/app/imgPMS/Imagen 27.png',
 
-      imagen: '/app/imgPMS/imagen 2.png',
+      imagen: '/app/imgPMS/Imagen 2.png',
     },
 
     {

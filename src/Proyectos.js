@@ -43,7 +43,7 @@ function Proyectos() {
           <Link to="/proyecto/3">
             <div className="card card-proyecto">
               <img
-                src="/app/imgPMS/imagen 2.png"
+                src="/app/imgPMS/Imagen 2.png"
                 className="card-img-top project-image" alt="Proyecto 3" />
               <div className="image-text" id="text-proyecto1">Paralelos Matta Sur</div>
             </div>
