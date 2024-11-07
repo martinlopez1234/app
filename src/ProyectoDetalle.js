@@ -3,16 +3,25 @@ import { useParams } from 'react-router-dom';
 import './App.css';
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
+
+
+
+
 const ProyectoDetalle = () => {
   const { id } = useParams();
 
-  const [showModal, setShowModal] = useState(false);
-  const [selectedImage, setSelectedImage] = useState('');
 
-  const handleImageClick = (imageUrl) => {
-    setSelectedImage(imageUrl);
-    setShowModal(true);
-  };
+  const [isOpen, setIsOpen] = useState(false);
+  const [photoIndex, setPhotoIndex] = useState(0);
+
+
+
+
 
   // Aquí podrías cargar la información del proyecto desde tu fuente de datos (API, estado local, etc.)
   // En este ejemplo, estoy utilizando un array de proyectos simulado
@@ -90,7 +99,7 @@ const ProyectoDetalle = () => {
         </div>
         <div class="row">
           <div class="col-md-4">
-            <p><strong>ARQUITECTOS</strong><br />Matías Nahum</p>
+            <p><strong>ARQUITECTO</strong><br />Matías Nahum</p>
           </div>
           <div class="col-md-4">
             <p><strong>CLIENTE</strong><br />Inversionistas particulares</p>
@@ -120,6 +129,9 @@ const ProyectoDetalle = () => {
       imagen2: '/app/imgNUA/Imagen 17.png',
       descripcionIMagen3: 'El primer nivel, debido a que es un área pública, quedará destinada a los programas de ferias y locales comerciales. Este plantea una estrategia de circulaciones continuas y fluidas a su vez de generar una transparencia visual que permite conectar ambas vías principales dentro del proyecto. Del mismo modo, NUA busca relacionarse con su contexto, generando una proyección de los volúmenes de la primera planta hacia norte y sur, permitiendo que el proyecto sea uno más con sus circulaciones principales.',
       imagen3: '/app/imgNUA/Imagen 3.png',
+      descripcionIMagen4: 'La segunda planta, destinada al uso del CoWork, propone un espacio colaborativo y creativo para sus usuarios, generando diferentes áreas de trabajo variadas dependiendo del uso que se le quiera dar. Dispone de puestos de trabajo flexible, oficinas privadas, salas de reuniones, área de esparcimiento, cafetería y una pequeña zona de ploteo. Todo este nivel se plantea con una vista panorámica hacia la playa de Algarrobo la cual se protege del asoleamiento norte mediante celosías de madera dispuestas para cuidar los espacios de la luz directa del sol. Estas se proyectan con un ritmo diferente en la fachada sur para así brindar de privacidad a la zona de oficinas privadas del proyecto. Finalmente, se proponen vacíos en la planta para así iluminar y ventilar de forma natural el proyecto, buscando siempre generar un confort adecuado para sus usuarios.',
+      imagen4: '/app/imgNUA/Imagen 11.png',
+
       imagenCarrusel1: '/app/imgNUA/Imagen 6.png',
       imagenCarrusel2: '/app/imgNUA/Imagen 7.png',
       imagenCarrusel3: '/app/imgNUA/Imagen 8.png',
@@ -217,11 +229,71 @@ const ProyectoDetalle = () => {
     // Agrega más proyectos según sea necesario
   ];
 
+
   const proyecto = proyectos.find((p) => p.id === parseInt(id, 10));
 
   if (!proyecto) {
     return <center><h1 >Proyecto no encontrado</h1></center>
   }
+
+  const images = [
+    proyecto.imagenCarrusel1,
+    proyecto.imagenCarrusel2,
+    proyecto.imagenCarrusel3,
+    proyecto.imagenCarrusel4,
+    proyecto.imagenCarrusel5,
+    proyecto.imagenCarrusel6,
+    proyecto.imagenCarrusel7,
+    proyecto.imagenCarrusel8,
+
+
+
+  ];
+
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,  // 4 imágenes por fila
+    slidesToScroll: 4, // Scroll de 4 en 4
+    initialSlide: 0,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,  // 3 imágenes por fila para pantallas medianas
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,  // 2 imágenes por fila para pantallas pequeñas
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,  // 1 imagen por fila para pantallas muy pequeñas
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
+  const openLightbox = (index) => {
+    setPhotoIndex(index);
+    setIsOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div>
@@ -243,7 +315,7 @@ const ProyectoDetalle = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)', // Ajusta la opacidad y color de fondo
+            backgroundColor: 'rgba(0, 0, 0, 0.2)', // Ajusta la opacidad y color de fondo
             color: 'white', // Ajusta el color del texto
           }}
         >
@@ -254,7 +326,9 @@ const ProyectoDetalle = () => {
       <div className='container mt-5'>
 
         <h5>{proyecto.caracteristicas}</h5>
-
+      </div>
+      <div className='container mt-5
+'>
         <h5>
           {proyecto.descripcion}</h5>
       </div>
@@ -268,7 +342,7 @@ const ProyectoDetalle = () => {
               </h5>
 
             </div>
-          </div>
+          </div >
           <div className="col-md-8 order-md-3 order-1">
             <img
               src={proyecto.imagen1}
@@ -278,11 +352,11 @@ const ProyectoDetalle = () => {
             />
           </div>
 
-        </div>
+        </div >
 
 
 
-      </div>
+      </div >
 
       <div class=" mt-1">
         <div class="row">
@@ -300,122 +374,110 @@ const ProyectoDetalle = () => {
       </div>
 
 
-      <div class=" mt-1">
-        <div class="row">
-          <div class="col-md-8 order-md-1 order-1">
-            <img src={proyecto.imagen3} class="img-fluid" alt="Imagen" />
-          </div>
-          <div class="col-md-4 order-md-2 order-2">
-            <div className='text-justify container'>
+
+
+      <div class=" mt-1 ">
+        <div class="row ">
+          <div class="col-md-4 order-md-1 order-2 ">
+            <div className='ms-3 text-justify container'>
               <h5>
                 {proyecto.descripcionIMagen3}
               </h5>
+
             </div>
           </div>
+          <div className="col-md-8 order-md-3 order-1">
+            <img
+              src={proyecto.imagen3}
+              className="img-fluid"
+
+              alt="Imagen"
+            />
+          </div>
+
         </div>
+
       </div>
 
-      {proyecto.imagen4 && proyecto.descripcionIMagen4 && (
-        <div className="mt-1">
-          <div className="row">
-            <div className="col-md-8 order-md-1 order-1">
-              <img src={proyecto.imagen4} className="img-fluid" alt="Imagen" />
-            </div>
-            <div className="col-md-4 order-md-2 order-2">
-              <div className="text-justify container">
-                <h5>{proyecto.descripcionIMagen4}</h5>
+
+      {
+        proyecto.imagen4 && proyecto.descripcionIMagen4 && (
+          <div className="mt-1">
+            <div className="row">
+              <div className="col-md-8 order-md-1 order-1">
+                <img src={proyecto.imagen4} className="img-fluid" alt="Imagen" />
+              </div>
+              <div className="col-md-4 order-md-2 order-2">
+                <div className="text-justify container">
+                  <h5>{proyecto.descripcionIMagen4}</h5>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )
+      }
 
-      {proyecto.imagen5 && proyecto.descripcionIMagen5 && (
-        <div className="mt-1">
-          <div className="row">
-            <div className="col-md-8 order-md-1 order-1">
-              <img src={proyecto.imagen5} className="img-fluid" alt="Imagen" />
-            </div>
-            <div className="col-md-4 order-md-2 order-2">
-              <div className="text-justify container">
-                <h5>{proyecto.descripcionIMagen5}</h5>
+      {
+        proyecto.imagen5 && proyecto.descripcionIMagen5 && (
+
+          <div class=" mt-1 ">
+            <div class="row ">
+              <div class="col-md-4 order-md-1 order-2 ">
+                <div className='ms-3 text-justify container'>
+                  <h5>
+                    {proyecto.descripcionIMagen5}
+                  </h5>
+
+                </div>
               </div>
+              <div className="col-md-8 order-md-3 order-1">
+                <img
+                  src={proyecto.imagen5}
+                  className="img-fluid"
+
+                  alt="Imagen"
+                />
+              </div>
+
             </div>
+
+          </div>
+        )
+      }
+
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col-12 text-center">
+            <h2>Galería</h2>
           </div>
         </div>
-      )}
 
-      <div class="row mt-5 container-fluid">
-        <div class="col-12 text-center">
-          <h2>Galería</h2>
+        <div className="slider-container">
+          <Slider {...settings}>
+            {images.map((img, index) => (
+              <div key={index} onClick={() => openLightbox(index)} className="p-2">
+                <img src={img} alt={`Slide ${index}`} style={{ width: '100%', cursor: 'pointer' }} />
+              </div>
+            ))}
+          </Slider>
+
+          {isOpen && (
+            <Lightbox
+              mainSrc={images[photoIndex]}
+              nextSrc={images[(photoIndex + 1) % images.length]}
+              prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+              onCloseRequest={() => setIsOpen(false)}
+              onMovePrevRequest={() =>
+                setPhotoIndex((photoIndex + images.length - 1) % images.length)
+              }
+              onMoveNextRequest={() =>
+                setPhotoIndex((photoIndex + 1) % images.length)
+              }
+            />
+          )}
         </div>
       </div>
-      <div id="carouselExampleControls" class="carousel slide container" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-3" onClick={() => handleImageClick(proyecto.imagenCarrusel1)}>
-                <img src={proyecto.imagenCarrusel1} class="d-block w-100 h-100" alt="Imagen de ejemplo 1" />
-
-              </div>
-
-
-              <div class="col-md-3" onClick={() => handleImageClick(proyecto.imagenCarrusel2)}>
-                <img src={proyecto.imagenCarrusel2} class="d-block w-100 h-100" alt="Imagen de ejemplo 2" />
-              </div>
-              <div class="col-md-3" onClick={() => handleImageClick(proyecto.imagenCarrusel3)}>
-                <img src={proyecto.imagenCarrusel3} class="d-block w-100 h-100" alt="Imagen de ejemplo 3" />
-              </div>
-
-              <div class="col-md-3" onClick={() => handleImageClick(proyecto.imagenCarrusel4)}>
-                <img src={proyecto.imagenCarrusel4} class="d-block w-100 h-100" alt="Imagen de ejemplo 3" />
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-3" onClick={() => handleImageClick(proyecto.imagenCarrusel5)}>
-                <img src={proyecto.imagenCarrusel5} class="d-block w-100 h-100" alt="Imagen de ejemplo 4" />
-              </div>
-              <div class="col-md-3" onClick={() => handleImageClick(proyecto.imagenCarrusel6)}>
-                <img src={proyecto.imagenCarrusel6} class="d-block w-100 h-100" alt="Imagen de ejemplo 5" />
-              </div>
-              <div class="col-md-3" onClick={() => handleImageClick(proyecto.imagenCarrusel7)}>
-                <img src={proyecto.imagenCarrusel7} class="d-block w-100 h-100" alt="Imagen de ejemplo 6" />
-              </div>
-              <div class="col-md-3" onClick={() => handleImageClick(proyecto.imagenCarrusel8)}>
-                <img src={proyecto.imagenCarrusel8} class="d-block w-100 h-100" alt="Imagen de ejemplo 4" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev   " href="#carouselExampleControls" role="button" data-slide="prev" style={{ left: -150 }}>
-          <span class="carousel-control-prev-icon " aria-hidden="true"></span>
-
-        </a>
-
-
-        <a class="carousel-control-next  " href="#carouselExampleControls" role="button" data-slide="next" style={{ right: -150 }}>
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-
-
-        </a>
-      </div>
-      <Modal show={showModal} onHide={() => setShowModal(false)} centered size="xl">
-        <Modal.Body style={{ position: 'relative', textAlign: 'center' }}>
-          <img src={selectedImage} className="img-fluid" alt="Imagen ampliada" style={{ maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto' }} />
-
-          <button style={{ position: 'absolute', top: -6.5, right: 15, background: 'none', border: 'none', cursor: 'pointer', fontSize: 50, color: 'white' }} onClick={() => setShowModal(false)}>×</button>
-        </Modal.Body>
-      </Modal>
-
-
-
-
-
-
-
-    </div >
+    </div>
 
 
 
