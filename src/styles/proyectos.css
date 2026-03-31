@@ -1,10 +1,7 @@
-
 /* codigo css (proyectos) para transformar a color blanco la imagen y que mueste el texto correpondiente */
 .card-proyecto {
   position: relative;
 }
-
-
 
 .image-container {
   position: relative;
@@ -24,7 +21,7 @@
 }
 
 .card-proyecto:hover img {
-   filter: brightness(90%) saturate(70%);
+  filter: brightness(90%) saturate(70%);
   opacity: 0.5; /* Ajusta este valor para controlar la transparencia */
 }
 
@@ -33,7 +30,8 @@
 }
 
 .project-image {
-    width: 100%; /* Ajusta el tamaño de acuerdo a tus necesidades */
-    height: 470px; /* Altura fija para todas las imágenes */
-    object-fit: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
-  }
+  width: 100%; /* Ajusta el tamaño de acuerdo a tus necesidades */
+  height: 470px; /* Altura fija para todas las imágenes */
+  object-fit: cover; /* Ajusta el tamaño de la imagen para cubrir el contenedor */
+}
+
