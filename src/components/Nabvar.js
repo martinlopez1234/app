@@ -14,7 +14,7 @@ function Navbar() {
     <div className="nav-wrapper">
       <nav className="navbar">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/App">
+          <Link className="navbar-brand" to="/">
             <img
               src={process.env.PUBLIC_URL + '/LogoNHM3.png'}
               alt="Mi Imagen"

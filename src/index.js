@@ -49,8 +49,8 @@ root.render(
         </Route>
 
         <Route element={<PublicShell />}>
-          <Route path="/" element={<Proyectos />} />
-          <Route path="/App" element={<App />} />
+          <Route path="/" element={<App />} />
+          <Route path="/App" element={<Navigate to="/" replace />} />
           <Route path="/Nosotros" element={<Nosotros />} />
           <Route path="/proyecto/:id" element={<ProyectoDetalle />} />
           <Route path="/Proyectos" element={<Proyectos />} />
