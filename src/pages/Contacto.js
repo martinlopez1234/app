@@ -1,37 +1,51 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { defaultContactContent } from '../lib/siteContentDefaults';
+import { supabase } from '../lib/supabaseClient';
 
 function Contacto() {
+  const [content, setContent] = useState(defaultContactContent);
+
+  useEffect(() => {
+    if (!supabase) return undefined;
+    let alive = true;
+    (async () => {
+      const { data } = await supabase
+        .from('site_content')
+        .select('content')
+        .eq('section_key', 'contact')
+        .maybeSingle();
+      if (alive && data?.content) {
+        setContent({ ...defaultContactContent, ...data.content });
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, []);
+
   return (
     <div className="container-fluid mt-5 d-flex">
       <div className="row flex-grow-1 w-100">
         <div className="col-md-6 d-flex flex-column justify-content-center p-5">
-          <h3>Información de Contacto</h3>
+          <h3>{content.title}</h3>
           <p>
-            <strong>Dirección:</strong> Calle Ejemplo, Ciudad Ejemplo
+            <strong>Direccion:</strong> {content.address}
           </p>
           <p>
-            <strong>Teléfono:</strong> +123 456 789
+            <strong>Telefono:</strong> {content.phone}
           </p>
           <p>
-            <strong>Correo Electrónico:</strong> info@example.com
+            <strong>Correo Electronico:</strong> {content.email}
           </p>
 
-          <h3 className="mt-4">Horario de Atención</h3>
-          <p>
-            <strong>Lunes a Viernes:</strong> 9:00 AM - 6:00 PM
-          </p>
-          <p>
-            <strong>Sábados:</strong> 10:00 AM - 2:00 PM
-          </p>
-          <p>
-            <strong>Domingos:</strong> Cerrado
-          </p>
+          <h3 className="mt-4">{content.hours_title}</h3>
+          <div dangerouslySetInnerHTML={{ __html: content.hours_html || '' }} />
         </div>
 
         <div className="col-md-6 d-flex align-items-center justify-content-center contacto-imagen">
           <img
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-            alt="Casa dibujada"
+            src={content.image_url}
+            alt="Contacto"
             loading="lazy"
             className="img-fluid"
           />
@@ -42,4 +56,3 @@ function Contacto() {
 }
 
 export default Contacto;
-

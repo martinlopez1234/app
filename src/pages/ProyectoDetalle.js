@@ -111,14 +111,6 @@ function ProyectoDetalle() {
     };
   }, [projectId]);
 
-  const getFeature = (slot) => features.find((f) => f.slot === slot) || null;
-
-  const feature1 = getFeature(1);
-  const feature2 = getFeature(2);
-  const feature3 = getFeature(3);
-  const feature4 = getFeature(4);
-  const feature5 = getFeature(5);
-
   const settings = {
     dots: true,
     infinite: false,
@@ -208,87 +200,37 @@ function ProyectoDetalle() {
       </div>
 
       <div className="container mt-5">
-        <h5 dangerouslySetInnerHTML={{ __html: proyecto.caracteristicas_html || '' }} />
+        <div className="project-rich-text" dangerouslySetInnerHTML={{ __html: proyecto.caracteristicas_html || '' }} />
       </div>
 
       <div className="container mt-5">
-        <h5 dangerouslySetInnerHTML={{ __html: proyecto.descripcion_html || '' }} />
+        <div className="project-rich-text" dangerouslySetInnerHTML={{ __html: proyecto.descripcion_html || '' }} />
       </div>
 
-      {feature1?.image_url && (
-        <div className=" mt-5 ">
-          <div className="row ">
-            <div className="col-md-4 order-md-1 order-2 ">
-              <div className="ms-3 text-justify container">
-                <h5 dangerouslySetInnerHTML={{ __html: feature1.descripcion_html || '' }} />
+      {features
+        .filter((feature) => feature.image_url)
+        .map((feature, index) => {
+          const imageFirst = index % 2 === 1;
+          return (
+            <div className={index === 0 ? 'mt-5' : 'mt-1'} key={`${feature.slot}-${feature.image_url}`}>
+              <div className="row">
+                <div className={`col-md-8 ${imageFirst ? 'order-md-1' : 'order-md-3'} order-1`}>
+                  <img
+                    src={feature.image_url}
+                    className="img-fluid"
+                    loading="lazy"
+                    alt={`Imagen del proyecto ${index + 1}`}
+                  />
+                </div>
+                <div className={`col-md-4 ${imageFirst ? 'order-md-2' : 'order-md-1'} order-2`}>
+                  <div className={`${imageFirst ? '' : 'ms-3'} text-justify container`}>
+                    <div className="project-rich-text" dangerouslySetInnerHTML={{ __html: feature.descripcion_html || '' }} />
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="col-md-8 order-md-3 order-1">
-              <img src={feature1.image_url} className="img-fluid" alt="Imagen" />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {feature2?.image_url && (
-        <div className=" mt-1">
-          <div className="row">
-            <div className="col-md-8 order-md-1 order-1">
-              <img src={feature2.image_url} className="img-fluid" alt="Imagen" />
-            </div>
-            <div className="col-md-4 order-md-2 order-2">
-              <div className="text-justify container">
-                <h5 dangerouslySetInnerHTML={{ __html: feature2.descripcion_html || '' }} />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {feature3?.image_url && (
-        <div className=" mt-1 ">
-          <div className="row ">
-            <div className="col-md-4 order-md-1 order-2 ">
-              <div className="ms-3 text-justify container">
-                <h5 dangerouslySetInnerHTML={{ __html: feature3.descripcion_html || '' }} />
-              </div>
-            </div>
-            <div className="col-md-8 order-md-3 order-1">
-              <img src={feature3.image_url} className="img-fluid" alt="Imagen" />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {feature4?.image_url && (
-        <div className="mt-1">
-          <div className="row">
-            <div className="col-md-8 order-md-1 order-1">
-              <img src={feature4.image_url} className="img-fluid" alt="Imagen" />
-            </div>
-            <div className="col-md-4 order-md-2 order-2">
-              <div className="text-justify container">
-                <h5 dangerouslySetInnerHTML={{ __html: feature4.descripcion_html || '' }} />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {feature5?.image_url && (
-        <div className=" mt-1 ">
-          <div className="row ">
-            <div className="col-md-4 order-md-1 order-2 ">
-              <div className="ms-3 text-justify container">
-                <h5 dangerouslySetInnerHTML={{ __html: feature5.descripcion_html || '' }} />
-              </div>
-            </div>
-            <div className="col-md-8 order-md-3 order-1">
-              <img src={feature5.image_url} className="img-fluid" alt="Imagen" />
-            </div>
-          </div>
-        </div>
-      )}
+          );
+        })}
 
       {images.length > 0 && (
         <div className="container mt-5">
@@ -305,6 +247,7 @@ function ProyectoDetalle() {
                   <img
                     src={img}
                     alt={`Slide ${index}`}
+                    loading="lazy"
                     style={{ width: '100%', cursor: 'pointer' }}
                   />
                 </div>

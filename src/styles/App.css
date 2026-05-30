@@ -47,3 +47,71 @@
   transform: scale(2);
 }
 
+.slider-container {
+  padding: 0 28px 36px;
+}
+
+.slider-container .slick-prev,
+.slider-container .slick-next {
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+}
+
+.slider-container .slick-prev {
+  left: -8px;
+}
+
+.slider-container .slick-next {
+  right: -8px;
+}
+
+.slider-container .slick-prev::before,
+.slider-container .slick-next::before {
+  color: #000;
+  font-size: 34px;
+  opacity: 1;
+}
+
+.slider-container .slick-disabled::before {
+  opacity: 0.25;
+}
+
+.rich-editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid #dee2e6;
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+  background: #f8f9fa;
+}
+
+.rich-editor-select {
+  width: auto;
+  min-width: 116px;
+}
+
+.rich-editor-surface {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  overflow: auto;
+}
+
+.rich-editor-surface:empty::before {
+  content: 'Escribe aqui...';
+  color: #6c757d;
+}
+
+.project-rich-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.35;
+  white-space: pre-line;
+}
+
+.project-rich-text p {
+  margin-bottom: 0.65rem;
+}
+

@@ -103,7 +103,39 @@ create policy "Admins delete project_images"
   to authenticated
   using (public.is_admin());
 
--- 5) Storage: bucket público para lectura; subida solo admins
+-- 5) Contenido editable: Nosotros y Contacto
+drop policy if exists "Public can read site content" on public.site_content;
+drop policy if exists "Read site_content" on public.site_content;
+create policy "Read site_content"
+  on public.site_content
+  for select
+  to anon, authenticated
+  using (true);
+
+drop policy if exists "Admins insert site_content" on public.site_content;
+drop policy if exists "Admins update site_content" on public.site_content;
+drop policy if exists "Admins delete site_content" on public.site_content;
+
+create policy "Admins insert site_content"
+  on public.site_content
+  for insert
+  to authenticated
+  with check (public.is_admin());
+
+create policy "Admins update site_content"
+  on public.site_content
+  for update
+  to authenticated
+  using (public.is_admin())
+  with check (public.is_admin());
+
+create policy "Admins delete site_content"
+  on public.site_content
+  for delete
+  to authenticated
+  using (public.is_admin());
+
+-- 6) Storage: bucket público para lectura; subida solo admins
 insert into storage.buckets (id, name, public)
 values ('project-images', 'project-images', true)
 on conflict (id) do update set public = excluded.public;
@@ -140,5 +172,5 @@ create policy "Admins delete project-images"
   to authenticated
   using (bucket_id = 'project-images' and public.is_admin());
 
--- 6) Primer admin (reemplaza el UUID por el de Authentication → Users → tu usuario)
+-- 7) Primer admin (reemplaza el UUID por el de Authentication → Users → tu usuario)
 -- insert into public.admin_users (user_id) values ('00000000-0000-0000-0000-000000000000');

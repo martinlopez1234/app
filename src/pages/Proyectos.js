@@ -79,6 +79,7 @@ function Proyectos() {
                       src={project.cover_image_url}
                       className="card-img-top project-image"
                       alt={project.nombre || 'Proyecto'}
+                      loading="lazy"
                       id="proyecto1"
                     />
                     <div className="image-text" id="text-proyecto1">

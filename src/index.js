@@ -18,6 +18,7 @@ import { AdminLayout } from './pages/admin/AdminLayout';
 import { AdminLogin } from './pages/admin/AdminLogin';
 import { AdminProjectsList } from './pages/admin/AdminProjectsList';
 import { AdminProjectForm } from './pages/admin/AdminProjectForm';
+import { AdminAboutForm, AdminContactForm, AdminContentList } from './pages/admin/AdminContentForm';
 
 function PublicShell() {
   return (
@@ -46,6 +47,9 @@ root.render(
           <Route path="proyectos" element={<AdminProjectsList />} />
           <Route path="proyectos/nuevo" element={<AdminProjectForm />} />
           <Route path="proyectos/:id" element={<AdminProjectForm />} />
+          <Route path="contenidos" element={<AdminContentList />} />
+          <Route path="contenidos/nosotros" element={<AdminAboutForm />} />
+          <Route path="contenidos/contacto" element={<AdminContactForm />} />
         </Route>
 
         <Route element={<PublicShell />}>

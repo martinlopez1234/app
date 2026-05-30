@@ -22,9 +22,15 @@ create table if not exists public.project_images (
   descripcion_html text,
   created_at timestamptz not null default now(),
   constraint project_images_feature_slot check (
-    (kind = 'feature' and slot is not null and slot between 1 and 5)
+    (kind = 'feature' and slot is not null and slot >= 1)
     or (kind = 'gallery' and slot is null)
   )
+);
+
+create table if not exists public.site_content (
+  section_key text primary key,
+  content jsonb not null default '{}'::jsonb,
+  updated_at timestamptz not null default now()
 );
 
 create index if not exists idx_projects_published_orden
@@ -36,6 +42,7 @@ create index if not exists idx_project_images_project_kind
 -- Row Level Security: lectura pública para anon (tu app React)
 alter table public.projects enable row level security;
 alter table public.project_images enable row level security;
+alter table public.site_content enable row level security;
 
 drop policy if exists "Public can read published projects" on public.projects;
 create policy "Public can read published projects"
@@ -56,6 +63,13 @@ create policy "Public can read project images"
         and p.published = true
     )
   );
+
+drop policy if exists "Public can read site content" on public.site_content;
+create policy "Public can read site content"
+  on public.site_content
+  for select
+  to anon, authenticated
+  using (true);
 
 -- Siguiente paso: ejecutar `admin_rls.sql` (admins, Storage, políticas de escritura).
 

@@ -1,15 +1,17 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { RichTextEditor } from '../../components/admin/RichTextEditor';
 import { supabase } from '../../lib/supabaseClient';
 import { uploadProjectImage } from '../../lib/uploadProjectImage';
 
-const emptyFeatures = () =>
-  [1, 2, 3, 4, 5].map((slot) => ({
-    slot,
-    image_url: '',
-    descripcion_html: '',
-    file: null,
-  }));
+const makeFeature = (slot) => ({
+  slot,
+  image_url: '',
+  descripcion_html: '',
+  file: null,
+});
+
+const emptyFeatures = () => [makeFeature(1)];
 
 function makeGalleryEntry(file) {
   return {
@@ -86,7 +88,8 @@ export function AdminProjectForm() {
         .eq('kind', 'gallery')
         .order('orden');
 
-      const base = emptyFeatures();
+      const maxSlot = Math.max(1, ...(feats || []).map((f) => f.slot || 1));
+      const base = Array.from({ length: maxSlot }, (_, i) => makeFeature(i + 1));
       (feats || []).forEach((f) => {
         const i = base.findIndex((b) => b.slot === f.slot);
         if (i >= 0) {
@@ -108,6 +111,22 @@ export function AdminProjectForm() {
     setFeatures((prev) =>
       prev.map((f) => (f.slot === slot ? { ...f, [field]: value } : f))
     );
+  };
+
+  const addFeature = () => {
+    setFeatures((prev) => [...prev, makeFeature((prev[prev.length - 1]?.slot || 0) + 1)]);
+  };
+
+  const removeFeature = (slot) => {
+    setFeatures((prev) => {
+      if (prev.length <= 1) {
+        return prev.map((feature) => (feature.slot === slot ? makeFeature(slot) : feature));
+      }
+      return prev.filter((feature) => feature.slot !== slot).map((feature, index) => ({
+        ...feature,
+        slot: index + 1,
+      }));
+    });
   };
 
   const removeGalleryUrl = (url) => {
@@ -302,33 +321,37 @@ export function AdminProjectForm() {
 
           <div className="col-md-6">
             <label className="form-label">Características</label>
-            <textarea
-              className="form-control font-monospace small"
-              rows={8}
-              value={caracteristicas_html}
-              onChange={(e) => setCaracteristicasHtml(e.target.value)}
-            />
+            <RichTextEditor value={caracteristicas_html} onChange={setCaracteristicasHtml} minHeight={180} />
           </div>
           <div className="col-md-6">
             <label className="form-label">Descripción</label>
-            <textarea
-              className="form-control font-monospace small"
-              rows={8}
-              value={descripcion_html}
-              onChange={(e) => setDescripcionHtml(e.target.value)}
-            />
+            <RichTextEditor value={descripcion_html} onChange={setDescripcionHtml} minHeight={180} />
           </div>
         </div>
 
         <hr className="my-4" />
-        <h2 className="h6">Bloques imagen + texto (1 a 5)</h2>
+        <div className="d-flex justify-content-between align-items-center gap-2 mb-2">
+          <h2 className="h6 mb-0">Bloques imagen + texto</h2>
+          <button type="button" className="btn btn-sm btn-outline-primary" onClick={addFeature}>
+            Agregar bloque
+          </button>
+        </div>
         <p className="small text-muted mb-3">
-          Deja un bloque vacío si no lo necesitas. Sube una imagen y el texto que quieras mostrar junto a ella.
+          Puedes agregar todos los bloques que necesites. Deja un bloque vacío si no lo quieres mostrar.
         </p>
 
         {features.map((f) => (
           <div key={f.slot} className="border rounded p-3 mb-3 bg-white">
-            <div className="fw-semibold mb-2">Bloque {f.slot}</div>
+            <div className="d-flex justify-content-between align-items-center gap-2 mb-2">
+              <div className="fw-semibold">Bloque {f.slot}</div>
+              <button
+                type="button"
+                className="btn btn-sm btn-outline-danger"
+                onClick={() => removeFeature(f.slot)}
+              >
+                {features.length <= 1 ? 'Limpiar' : 'Quitar'}
+              </button>
+            </div>
             {f.image_url && !f.file && (
               <div className="mb-2">
                 <img src={f.image_url} alt="" className="rounded border" style={{ maxHeight: 100 }} />
@@ -349,11 +372,10 @@ export function AdminProjectForm() {
             </div>
             <div>
               <label className="form-label small">Texto</label>
-              <textarea
-                className="form-control form-control-sm font-monospace"
-                rows={3}
+              <RichTextEditor
                 value={f.descripcion_html}
-                onChange={(e) => setFeatureField(f.slot, 'descripcion_html', e.target.value)}
+                onChange={(value) => setFeatureField(f.slot, 'descripcion_html', value)}
+                minHeight={110}
               />
             </div>
           </div>

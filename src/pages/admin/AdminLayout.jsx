@@ -12,6 +12,9 @@ export function AdminLayout() {
             <Link to="/admin/proyectos" className="text-decoration-none">
               Proyectos
             </Link>
+            <Link to="/admin/contenidos" className="text-decoration-none">
+              Contenidos
+            </Link>
           </div>
           <div className="d-flex gap-2">
             <Link to="/" className="btn btn-sm btn-outline-primary">
