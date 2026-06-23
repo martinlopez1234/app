@@ -48,7 +48,7 @@
 }
 
 .slider-container {
-  padding: 0 28px 36px;
+  padding: 0 56px 36px;
 }
 
 .slider-container .slick-prev,
@@ -59,11 +59,11 @@
 }
 
 .slider-container .slick-prev {
-  left: -8px;
+  left: -34px;
 }
 
 .slider-container .slick-next {
-  right: -8px;
+  right: -34px;
 }
 
 .slider-container .slick-prev::before,
@@ -100,8 +100,12 @@
 }
 
 .rich-editor-surface:empty::before {
-  content: 'Escribe aqui...';
+  content: 'Escribe aquí...';
   color: #6c757d;
+}
+
+.project-feature-block {
+  margin-top: 250px;
 }
 
 .project-rich-text {

@@ -212,7 +212,7 @@ function ProyectoDetalle() {
         .map((feature, index) => {
           const imageFirst = index % 2 === 1;
           return (
-            <div className={index === 0 ? 'mt-5' : 'mt-1'} key={`${feature.slot}-${feature.image_url}`}>
+            <div className="project-feature-block" key={`${feature.slot}-${feature.image_url}`}>
               <div className="row">
                 <div className={`col-md-8 ${imageFirst ? 'order-md-1' : 'order-md-3'} order-1`}>
                   <img

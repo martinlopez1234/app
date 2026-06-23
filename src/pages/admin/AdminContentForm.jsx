@@ -27,8 +27,8 @@ export function AdminContentList() {
         <table className="table table-hover mb-0">
           <thead className="table-light">
             <tr>
-              <th>Seccion</th>
-              <th>Descripcion</th>
+              <th>Sección</th>
+              <th>Descripción</th>
               <th></th>
             </tr>
           </thead>
@@ -44,7 +44,7 @@ export function AdminContentList() {
             </tr>
             <tr>
               <td>Contacto</td>
-              <td>Direccion, telefono, correo, horario e imagen.</td>
+              <td>Dirección, teléfono, correo, horario e imagen.</td>
               <td className="text-end">
                 <Link to="/admin/contenidos/contacto" className="btn btn-sm btn-outline-primary">
                   Editar
@@ -149,11 +149,11 @@ export function AdminAboutForm() {
 
       <div className="row g-3">
         <div className="col-md-6">
-          <label className="form-label">Titulo oficina</label>
+          <label className="form-label">Título oficina</label>
           <input className="form-control" value={about.office_title} onChange={(e) => setAboutField('office_title', e.target.value)} />
         </div>
         <div className="col-md-6">
-          <label className="form-label">Titulo equipo</label>
+          <label className="form-label">Título equipo</label>
           <input className="form-control" value={about.team_title} onChange={(e) => setAboutField('team_title', e.target.value)} />
         </div>
         <div className="col-12">
@@ -184,7 +184,7 @@ export function AdminAboutForm() {
           {member.image_file && <p className="small text-success mb-1">Nueva imagen: {member.image_file.name}</p>}
           <label className="form-label small">Foto</label>
           <input type="file" accept="image/*" className="form-control mb-2" onChange={(e) => setMemberField(index, 'image_file', e.target.files?.[0] || null)} />
-          <label className="form-label small">Descripcion</label>
+          <label className="form-label small">Descripción</label>
           <RichTextEditor value={member.description_html} onChange={(value) => setMemberField(index, 'description_html', value)} minHeight={120} />
         </div>
       ))}
@@ -266,19 +266,19 @@ export function AdminContactForm() {
 
       <div className="row g-3">
         <div className="col-md-6">
-          <label className="form-label">Titulo</label>
+          <label className="form-label">Título</label>
           <input className="form-control" value={contact.title} onChange={(e) => setContactField('title', e.target.value)} />
         </div>
         <div className="col-md-6">
-          <label className="form-label">Titulo horario</label>
+          <label className="form-label">Título horario</label>
           <input className="form-control" value={contact.hours_title} onChange={(e) => setContactField('hours_title', e.target.value)} />
         </div>
         <div className="col-md-4">
-          <label className="form-label">Direccion</label>
+          <label className="form-label">Dirección</label>
           <input className="form-control" value={contact.address} onChange={(e) => setContactField('address', e.target.value)} />
         </div>
         <div className="col-md-4">
-          <label className="form-label">Telefono</label>
+          <label className="form-label">Teléfono</label>
           <input className="form-control" value={contact.phone} onChange={(e) => setContactField('phone', e.target.value)} />
         </div>
         <div className="col-md-4">

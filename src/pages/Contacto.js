@@ -27,29 +27,37 @@ function Contacto() {
     <div className="container-fluid mt-5 d-flex">
       <div className="row flex-grow-1 w-100">
         <div className="col-md-6 d-flex flex-column justify-content-center p-5">
-          <h3>{content.title}</h3>
-          <p>
-            <strong>Direccion:</strong> {content.address}
-          </p>
-          <p>
-            <strong>Telefono:</strong> {content.phone}
-          </p>
-          <p>
-            <strong>Correo Electronico:</strong> {content.email}
-          </p>
+          {content.title && <h3>{content.title}</h3>}
+          {content.address && (
+            <p>
+              <strong>Dirección:</strong> {content.address}
+            </p>
+          )}
+          {content.phone && (
+            <p>
+              <strong>Teléfono:</strong> {content.phone}
+            </p>
+          )}
+          {content.email && (
+            <p>
+              <strong>Correo Electrónico:</strong> {content.email}
+            </p>
+          )}
 
-          <h3 className="mt-4">{content.hours_title}</h3>
-          <div dangerouslySetInnerHTML={{ __html: content.hours_html || '' }} />
+          {content.hours_title && <h3 className="mt-4">{content.hours_title}</h3>}
+          {content.hours_html && <div dangerouslySetInnerHTML={{ __html: content.hours_html }} />}
         </div>
 
-        <div className="col-md-6 d-flex align-items-center justify-content-center contacto-imagen">
-          <img
-            src={content.image_url}
-            alt="Contacto"
-            loading="lazy"
-            className="img-fluid"
-          />
-        </div>
+        {content.image_url && (
+          <div className="col-md-6 d-flex align-items-center justify-content-center contacto-imagen">
+            <img
+              src={content.image_url}
+              alt="Contacto"
+              loading="lazy"
+              className="img-fluid"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

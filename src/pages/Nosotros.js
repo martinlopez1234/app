@@ -25,35 +25,41 @@ function Nosotros() {
 
   return (
     <div>
-      <div className="card">
-        <img
-          src={content.hero_image_url}
-          alt="Nuestra Empresa"
-          className="img-fluid"
-          loading="lazy"
-        />
-      </div>
+      {content.hero_image_url && (
+        <div className="card">
+          <img
+            src={content.hero_image_url}
+            alt="Nuestra Empresa"
+            className="img-fluid"
+            loading="lazy"
+          />
+        </div>
+      )}
 
       <div className="container">
-        <h3 className="text-center">{content.office_title}</h3>
-        <div dangerouslySetInnerHTML={{ __html: content.office_html || '' }} />
+        {content.office_title && <h3 className="text-center">{content.office_title}</h3>}
+        {content.office_html && <div dangerouslySetInnerHTML={{ __html: content.office_html }} />}
       </div>
 
-      <h3 className="text-center">{content.team_title}</h3>
+      {content.team_title && <h3 className="text-center">{content.team_title}</h3>}
       <div className="container-fluid mb-4">
         <div className="row justify-content-center">
           {(content.team || []).map((member, index) => (
             <div className="col-md-5 mb-3" key={`${member.name}-${index}`}>
               <div className="card h-100">
-                <img
-                  src={member.image_url}
-                  className="card-img-top"
-                  alt={member.name || `Miembro del equipo ${index + 1}`}
-                  loading="lazy"
-                />
+                {member.image_url && (
+                  <img
+                    src={member.image_url}
+                    className="card-img-top"
+                    alt={member.name || `Miembro del equipo ${index + 1}`}
+                    loading="lazy"
+                  />
+                )}
                 <div className="card-body">
-                  <h5 className="card-title">{member.name}</h5>
-                  <div className="card-text" dangerouslySetInnerHTML={{ __html: member.description_html || '' }} />
+                  {member.name && <h5 className="card-title">{member.name}</h5>}
+                  {member.description_html && (
+                    <div className="card-text" dangerouslySetInnerHTML={{ __html: member.description_html }} />
+                  )}
                 </div>
               </div>
             </div>
